@@ -27,3 +27,20 @@ main {
 section:has(h1) {
 	text-align: center;
 }
+/*Web Accessibilty - wrap animation with this*/
+@media (prefers-reduced-motion: no-preference) {
+	.anim-1 > img {
+		scale: 0.8;
+		opacity: 0;
+		animation: fade-in linear forwards;
+		animation-timeline: view();
+		animation-range: entry;
+	}
+
+	@keyframes fade-in {
+		to {
+			scale: 1;
+			opacity: 1;
+		}
+	}
+}
